@@ -1,1 +1,132 @@
-SIRAJ PAGE
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>خيمة سيراج</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+  --bg1:#0c0f1a;
+  --bg2:#151a2c;
+  --gold:#d4af37;
+  --text:#ffffff;
+  --muted:#d8d8e0;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto;
+  color:var(--text);
+  background:
+  radial-gradient(800px 500px at 50% -10%, rgba(212,175,55,.25), transparent 60%),
+  linear-gradient(180deg,var(--bg1),var(--bg2));
+  min-height:100vh;
+}
+.wrap{
+  max-width:420px;
+  margin:auto;
+  padding:30px 16px 50px;
+  text-align:center;
+}
+
+.logo{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  margin:0 auto 16px;
+  overflow:hidden;
+  border:6px solid rgba(212,175,55,.35);
+  background:#1d2235;
+}
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+h1{
+  margin:8px 0 6px;
+  font-size:24px;
+}
+
+.tag{
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:18px;
+}
+
+.btns{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:10px;
+}
+
+.btn{
+  padding:16px;
+  border-radius:18px;
+  background:linear-gradient(180deg,#1f2438,#14192b);
+  border:1px solid rgba(212,175,55,.25);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:15px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  transition:.2s;
+}
+
+.btn:active{
+  transform:scale(.98);
+}
+
+.footer{
+  margin-top:22px;
+  font-size:12px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<div class="logo">
+  <img src="logo-siraj.png" alt="SIRAJ"
+  onerror="this.remove(); this.parentElement.innerHTML='SJ';">
+</div>
+
+<h1>خيمة سيراج الرمضانية</h1>
+<div class="tag">أجواء رمضانية • فعاليات • ضيافة مميزة</div>
+
+<div class="btns">
+  <a class="btn" href="#" target="_blank">
+    <i class="fa-brands fa-instagram"></i>
+    إنستغرام
+  </a>
+
+  <a class="btn" href="#" target="_blank">
+    <i class="fa-brands fa-facebook"></i>
+    فيسبوك
+  </a>
+
+  <a class="btn" href="#" target="_blank">
+    <i class="fa-solid fa-location-dot"></i>
+    الموقع
+  </a>
+</div>
+
+<div class="footer">
+برعاية TouchTag
+</div>
+
+</div>
+
+</body>
+</html>
