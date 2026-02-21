@@ -1,168 +1,124 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>خيمة سراج</title>
+<title>SIRAJ Ramadan Tent</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
 :root{
-  --bg1:#0b0b12;
-  --bg2:#141a2a;
+  --bg1:#0b0f1d;
+  --bg2:#151a2c;
   --gold:#d4af37;
   --text:#ffffff;
   --muted:#d8d8e0;
-  --stroke: rgba(212,175,55,.22);
 }
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto;
   color:var(--text);
   background:
-    radial-gradient(850px 520px at 50% -10%, rgba(212,175,55,.26), transparent 60%),
-    radial-gradient(700px 420px at 20% 10%, rgba(255,255,255,.06), transparent 55%),
-    linear-gradient(180deg,var(--bg1),var(--bg2));
+  radial-gradient(800px 500px at 50% -10%, rgba(212,175,55,.25), transparent 60%),
+  linear-gradient(180deg,var(--bg1),var(--bg2));
   min-height:100vh;
 }
 .wrap{
   max-width:420px;
-  margin:0 auto;
-  padding:28px 16px 48px;
+  margin:auto;
+  padding:30px 16px 50px;
   text-align:center;
 }
 .logo{
-  width:120px;height:120px;border-radius:50%;
-  margin:0 auto 14px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin:0 auto 16px;
   overflow:hidden;
   border:6px solid rgba(212,175,55,.35);
-  background:#1d2235;
-  box-shadow: 0 18px 55px rgba(0,0,0,.45);
 }
-.logo img{width:100%;height:100%;object-fit:cover;display:block}
-
-h1{margin:8px 0 6px;font-size:24px;letter-spacing:.2px}
-.tag{font-size:14px;color:var(--muted);margin:0 0 14px;line-height:1.5}
-
-.social{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin:12px 0 14px;
-}
-.sbtn{
-  width:44px;height:44px;border-radius:50%;
-  display:grid;place-items:center;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
-  color:#fff;text-decoration:none;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
-  transition: transform .15s ease, background .2s ease;
-}
-.sbtn:hover{transform: translateY(-2px); background: rgba(255,255,255,.09);}
-
-.map{
-  margin:10px 0 14px;
-  border-radius:18px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow: 0 14px 40px rgba(0,0,0,.35);
-}
-.map iframe{
+.logo img{
   width:100%;
-  height:180px;
-  border:0;
-  display:block;
+  height:100%;
+  object-fit:cover;
 }
-.map a{
-  display:block;
-  text-align:center;
-  padding:10px 12px;
-  background: rgba(0,0,0,.35);
-  color:#fff;
-  text-decoration:none;
-  font-size:13px;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
+h1{margin:8px 0 6px;font-size:22px}
+.tag{font-size:14px;color:var(--muted);margin-bottom:20px}
 
-.btns{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  margin-top:10px;
-}
 .btn{
-  padding:16px 14px;
+  padding:16px;
   border-radius:18px;
-  background: linear-gradient(180deg,#1f2438,#14192b);
-  border:1px solid var(--stroke);
+  background:linear-gradient(180deg,#1f2438,#14192b);
+  border:1px solid rgba(212,175,55,.25);
   color:#fff;
   text-decoration:none;
-  font-weight:700;
+  font-weight:600;
   font-size:15px;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   gap:10px;
+  margin-bottom:12px;
+  transition:.2s;
 }
-.btn:active{transform:scale(.985)}
+.btn:active{transform:scale(.98)}
 
-.footer{margin-top:18px;font-size:12px;color:var(--muted)}
+.footer{
+  margin-top:20px;
+  font-size:12px;
+  color:var(--muted);
+}
 </style>
 </head>
 
 <body>
+
 <div class="wrap">
 
-  <div class="logo">
-    <img src="../logo-siraj.png" alt="سراج"
-      onerror="this.remove(); this.parentElement.innerHTML='سراج';">
-  </div>
-
-  <h1>خيمة سراج الرمضانية</h1>
-  <div class="tag">أجواء رمضانية • فعاليات • ضيافة مميزة</div>
-
-  <!-- TOP ICONS -->
-  <div class="social">
-    <a class="sbtn" href="tel:+962798101101" title="Call"><i class="fa-solid fa-phone"></i></a>
-    <a class="sbtn" href="https://wa.me/962798101101" target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a class="sbtn" href="https://instagram.com/st.georgejo" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a class="sbtn" href="https://facebook.com/profile.php?id=61573450402451" target="_blank" rel="noopener" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-  </div>
-
-  <!-- MAP -->
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3383.451377469007!2d35.7858796!3d32.0028847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca3005ecf2ad7%3A0x5313f1435ff4136f!2zU3QuIEdlb3JnZSAtINiz2KfZhiDYrNmI2LHYrA!5e0!3m2!1sen!2sjo!4v1771717253044!5m2!1sen!2sjo"
-      loading="lazy"
-      allowfullscreen
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <a href="https://maps.google.com/?q=St.%20George%20Jo" target="_blank" rel="noopener">الموقع على الخريطة</a>
-  </div>
-
-  <!-- BIG BUTTONS -->
-  <div class="btns">
-    <a class="btn" href="https://instagram.com/st.georgejo" target="_blank" rel="noopener">
-      <i class="fa-brands fa-instagram"></i> إنستغرام
-    </a>
-
-    <a class="btn" href="https://facebook.com/profile.php?id=61573450402451" target="_blank" rel="noopener">
-      <i class="fa-brands fa-facebook-f"></i> فيسبوك
-    </a>
-
-    <a class="btn" href="tel:+962798101101">
-      <i class="fa-solid fa-phone"></i> اتصال
-    </a>
-
-    <a class="btn" href="mailto:stgeorgethegarden@gmail.com">
-      <i class="fa-solid fa-envelope"></i> بريد إلكتروني
-    </a>
-  </div>
-
-  <div class="footer">برعاية TouchTag</div>
+<div class="logo">
+  <img src="../logo-siraj.png" alt="SIRAJ">
 </div>
+
+<h1>SIRAJ Ramadan Tent</h1>
+<div class="tag">Ramadan Events • Hospitality • Entertainment</div>
+
+<!-- Instagram -->
+<a class="btn" href="https://instagram.com/st.georgejo" target="_blank">
+  <i class="fa-brands fa-instagram"></i>
+  Instagram
+</a>
+
+<!-- Facebook -->
+<a class="btn" href="https://www.facebook.com/profile.php?id=61573450402451" target="_blank">
+  <i class="fa-brands fa-facebook-f"></i>
+  Facebook
+</a>
+
+<!-- Location -->
+<a class="btn" href="https://maps.google.com/?q=St.%20George%20Jo" target="_blank">
+  <i class="fa-solid fa-location-dot"></i>
+  Location
+</a>
+
+<!-- Call Centre -->
+<a class="btn" href="tel:+962798101101">
+  <i class="fa-solid fa-phone"></i>
+  Call Centre: 0798101101
+</a>
+
+<!-- Meeting & Events -->
+<a class="btn" href="tel:+962790177900">
+  <i class="fa-solid fa-phone"></i>
+  Meeting & Events: 0790177900
+</a>
+
+<div class="footer">
+Sponsored by TouchTag
+</div>
+
+</div>
+
 </body>
 </html>
