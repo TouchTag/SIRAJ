@@ -17,19 +17,11 @@
 *{box-sizing:border-box}
 
 body{
-   margin:0;
+  margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto;
   color:white;
-  overflow:hidden;
   background: linear-gradient(180deg,#0b0f1c,#05070f);
-}
-
-/* STAR CANVAS */
-canvas{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  opacity:.85;
+  overflow-x:hidden;   /* بس امنع عرض جانبي */
 }
 
 /* CENTER */
@@ -38,21 +30,18 @@ canvas{
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:40px 20px;
+  padding:30px 15px;
 }
 
-/* CARD */
+/* MAIN CONTAINER */
 .card{
-  .card{
   width:520px;
-  max-width:95%;
-  padding:0;
-  background:transparent;
-  backdrop-filter:none;
-  border:none;
-  box-shadow:none;
+  max-width:100%;
   text-align:center;
-
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
   animation:enter .8s ease forwards;
   opacity:0;
   transform:translateY(18px);
@@ -66,80 +55,70 @@ canvas{
 .lantern{
   font-size:34px;
   color:var(--gold2);
-  margin-bottom:14px;
+  margin-bottom:10px;
   text-shadow:0 0 18px rgba(255,223,154,.55);
-  animation:float 3s ease-in-out infinite;
 }
 
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
-}
-
-/* Top Logos (CIRCLES) */
+/* Logos */
 .logos{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:18px;
-  margin: 6px 0 10px;
+  margin: 6px 0 5px;
 }
 
 .logos img{
-  width:92px;
-  height:92px;
+  width:85px;
+  height:85px;
   object-fit:cover;
   border-radius:50%;
   background: rgba(13,17,31,.75);
   padding:10px;
   border:1px solid rgba(255,255,255,.10);
   box-shadow:0 0 18px rgba(255,200,0,.22);
-  transition:.25s ease;
-}
-
-.logos img:hover{
-  transform:scale(1.06);
 }
 
 .divider{
   width:2px;
-  height:58px;
+  height:50px;
   background:linear-gradient(to bottom,transparent,var(--gold),transparent);
 }
 
-/* Middle Siraj Logo (BIGGER + LESS EMPTY SPACE) */
+/* Middle Logo */
 .siraj-title{
-  margin: 0;        /* صفر فراغ */
-  padding: 0;
-  line-height: 0;
+  margin:0;
+  padding:0;
+  line-height:0;
 }
 
 .siraj-title img{
-  width: 460px;      /* كبرها */
-  max-width: 95%;
-  display: block;
-  margin: 0 auto;
-  transform: scale(1.35);   /* كبر اللوجو */
-  transform-origin: center;
+  width:430px;
+  max-width:95%;
+  display:block;
+  margin:0 auto;
 }
 
 /* Sub text */
 .sub{
   color:#f5c76d;
   font-size:14px;
-  margin: 6px 0 10px;     /* أقل فراغ */
+  margin:5px 0 8px;
 }
 
 /* Buttons */
 .btn{
+  width:420px;
+  max-width:95%;
   display:block;
-  padding:16px;
-  margin:12px 0;
+  padding:15px;
+  margin:10px auto;
   border-radius:50px;
-  font-size:17px;
+  font-size:18px;
   font-weight:800;
   text-decoration:none;
   transition:.25s;
+  text-align:center;
 }
 
 .btn:hover{ transform:scale(1.04); }
@@ -148,25 +127,20 @@ canvas{
   background:linear-gradient(90deg,#d4a646,#ffdd9b);
   color:white;
   box-shadow:0 0 22px rgba(255,200,0,.45);
-  font-size:25px;
+  font-size:22px;
 }
 
 .btn-touch{
   background:linear-gradient(90deg,#8c5a00,#c4881a);
   color:white;
   box-shadow:0 0 20px rgba(255,150,0,.35);
-
-  width:85%;
-  margin:12px auto 0;
-  padding:12px;
   font-size:15px;
 }
 
 .footer{
-  margin-top:18px;
+  margin-top:15px;
   font-size:13px;
   color:#d4af37;
-  opacity:.95;
 }
 </style>
 </head>
