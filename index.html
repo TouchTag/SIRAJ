@@ -17,14 +17,11 @@
 *{box-sizing:border-box}
 
 body{
-  margin:0;
+   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,Roboto;
   color:white;
   overflow:hidden;
-  background:
-    radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,.25), transparent 60%),
-    radial-gradient(700px 400px at 20% 15%, rgba(255,106,0,.15), transparent 60%),
-    linear-gradient(180deg,#0b0f1c,#05070f);
+  background: linear-gradient(180deg,#0b0f1c,#05070f);
 }
 
 /* STAR CANVAS */
@@ -178,8 +175,6 @@ canvas{
 
 <body>
 
-<canvas id="stars"></canvas>
-
 <div class="wrap">
   <div class="card">
 
@@ -207,54 +202,6 @@ canvas{
 
   </div>
 </div>
-
-<script>
-const canvas = document.getElementById('stars');
-const ctx = canvas.getContext('2d');
-
-function resize(){
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-
-let stars = [];
-function initStars(){
-  stars = [];
-  for(let i=0;i<120;i++){
-    stars.push({
-      x: Math.random()*canvas.width,
-      y: Math.random()*canvas.height,
-      r: Math.random()*2,
-      d: 0.3 + Math.random()*1.2
-    });
-  }
-}
-initStars();
-
-function draw(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle = "rgba(255,215,130,.85)";
-  ctx.beginPath();
-  for(let s of stars){
-    ctx.moveTo(s.x,s.y);
-    ctx.arc(s.x,s.y,s.r,0,Math.PI*2,true);
-  }
-  ctx.fill();
-
-  for(let s of stars){
-    s.y += s.d;
-    if(s.y > canvas.height){
-      s.y = -5;
-      s.x = Math.random()*canvas.width;
-    }
-  }
-
-  requestAnimationFrame(draw);
-}
-draw();
-</script>
 
 </body>
 </html>
