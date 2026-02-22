@@ -1,47 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>SIRAJ × TouchTag</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
+:root{
+  --gold:#d4af37;
+  --gold2:#ffdf9a;
+  --orange:#ff6a00;
+}
+
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #3a2300 0%, #0b0f1c 60%, #05070f 100%);
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
   color:white;
+  overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 50% -10%, rgba(212,175,55,.25), transparent 60%),
+    radial-gradient(700px 400px at 20% 15%, rgba(255,106,0,.15), transparent 60%),
+    linear-gradient(180deg,#0b0f1c,#05070f);
+}
+
+/* STAR CANVAS */
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  opacity:.8;
+}
+
+/* CENTER */
+.wrap{
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
-  overflow:hidden;
-}
-
-/* Glowing particles effect */
-body:before{
-  content:"";
-  position:absolute;
-  width:100%;
-  height:100%;
-  background-image:url('https://i.imgur.com/7RZ6YhR.png');
-  opacity:0.15;
-  background-size:cover;
-}
-
-/* Main Card */
-.card{
-  text-align:center;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  padding:50px 30px;
-  border-radius:30px;
-  width:420px;
-  box-shadow: 0 0 80px rgba(255,180,0,0.25);
   position:relative;
-  z-index:1;
+  z-index:2;
+  padding:20px;
+}
+
+/* CARD */
+.card{
+  width:520px;
+  max-width:95%;
+  padding:40px 30px;
+  border-radius:30px;
+  background:rgba(15,15,20,.55);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.1);
+  box-shadow:0 0 80px rgba(212,175,55,.25);
+  text-align:center;
+  animation:enter .8s ease forwards;
+  opacity:0;
+  transform:translateY(20px);
+}
+
+@keyframes enter{
+  to{opacity:1; transform:translateY(0)}
+}
+
+/* Lantern */
+.lantern{
+  font-size:34px;
+  color:var(--gold2);
+  margin-bottom:15px;
+  text-shadow:0 0 20px rgba(255,223,154,.6);
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
 }
 
 /* Logos */
@@ -49,95 +84,146 @@ body:before{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:30px;
-  margin-bottom:30px;
+  gap:25px;
+  margin-bottom:20px;
 }
 
 .logos img{
   height:90px;
   object-fit:contain;
-  filter: drop-shadow(0 0 15px rgba(255,190,0,0.4));
+  filter:drop-shadow(0 0 15px rgba(255,200,0,.4));
 }
 
-/* Title */
+.divider{
+  width:2px;
+  height:70px;
+  background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+}
+
 h1{
-  font-size:28px;
-  margin-bottom:8px;
-  font-weight:600;
+  font-size:24px;
+  margin:10px 0 6px;
 }
 
 .sub{
   color:#f5c76d;
   font-size:14px;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
 /* Buttons */
 .btn{
   display:block;
   padding:16px;
-  margin:15px 0;
+  margin:12px 0;
   border-radius:50px;
-  font-size:18px;
+  font-size:17px;
+  font-weight:700;
   text-decoration:none;
-  font-weight:600;
-  transition:0.3s;
+  transition:.3s;
 }
 
-.btn-gold{
-  background: linear-gradient(90deg,#d4a646,#ffdd9b);
+.btn-siraj{
+  background:linear-gradient(90deg,#d4a646,#ffdd9b);
   color:black;
-  box-shadow:0 0 25px rgba(255,200,0,0.6);
+  box-shadow:0 0 25px rgba(255,200,0,.5);
 }
 
-.btn-gold:hover{
-  transform:scale(1.05);
-}
-
-.btn-dark{
-  background: linear-gradient(90deg,#8c5a00,#c4881a);
+.btn-touch{
+  background:linear-gradient(90deg,#8c5a00,#c4881a);
   color:white;
-  box-shadow:0 0 20px rgba(255,150,0,0.4);
+  box-shadow:0 0 25px rgba(255,150,0,.4);
 }
 
-.btn-dark:hover{
+.btn:hover{
   transform:scale(1.05);
 }
 
-/* Footer */
 .footer{
-  margin-top:25px;
+  margin-top:20px;
   font-size:13px;
-  color:#d4a646;
+  color:#d4af37;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<canvas id="stars"></canvas>
 
-  <div class="logos">
-    <img src="logo-siraj.png" alt="Siraj">
-    <img src="logo-touchtag.png" alt="TouchTag">
+<div class="wrap">
+  <div class="card">
+
+    <div class="lantern">
+      <i class="fa-solid fa-mosque"></i>
+    </div>
+
+    <div class="logos">
+      <img src="logo-siraj.png" alt="Siraj">
+      <div class="divider"></div>
+      <img src="logo-touchtag.png" alt="TouchTag">
+    </div>
+
+    <h1>SIRAJ Ramadan Tent & TouchTag</h1>
+    <div class="sub">Official NFC Experience Partner</div>
+
+    <a href="/SIRAJ/siraj/" class="btn btn-siraj">
+      Siraj Tent
+    </a>
+
+    <a href="https://touchtag.github.io/TouchTag/" class="btn btn-touch">
+      TouchTag
+    </a>
+
+    <div class="footer">
+      Sponsored & Powered by TouchTag
+    </div>
+
   </div>
-
-  <h1>SIRAJ Ramadan Tent × TouchTag</h1>
-  <div class="sub">Official NFC Experience Partner</div>
-
-  <a href="/SIRAJ/siraj/" class="btn btn-gold">
-    Explore Siraj Tent
-  </a>
-
-  <a href="https://touchtag.github.io/TouchTag/" class="btn btn-dark">
-    Explore TouchTag
-  </a>
-
-  <div class="footer">
-    Sponsored & Powered by TouchTag
-  </div>
-
 </div>
+
+<script>
+const canvas=document.getElementById('stars');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let stars=[];
+for(let i=0;i<120;i++){
+  stars.push({
+    x:Math.random()*canvas.width,
+    y:Math.random()*canvas.height,
+    r:Math.random()*2,
+    d:Math.random()*1
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle="rgba(255,215,130,.8)";
+  ctx.beginPath();
+  for(let i=0;i<stars.length;i++){
+    let s=stars[i];
+    ctx.moveTo(s.x,s.y);
+    ctx.arc(s.x,s.y,s.r,0,Math.PI*2,true);
+  }
+  ctx.fill();
+  update();
+}
+
+function update(){
+  for(let i=0;i<stars.length;i++){
+    let s=stars[i];
+    s.y+=s.d;
+    if(s.y>canvas.height){
+      s.y=0;
+      s.x=Math.random()*canvas.width;
+    }
+  }
+}
+
+setInterval(draw,33);
+</script>
 
 </body>
 </html>
