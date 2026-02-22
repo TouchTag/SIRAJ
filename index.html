@@ -162,7 +162,7 @@ h1{
 
 .siraj-title{
   text-align:center;
-  margin: 5px 0;
+  margin: -5px 0;
 }
 
 .siraj-title img{
@@ -186,6 +186,34 @@ h1{
   background:transparent;
   box-shadow:none;
   border:none;
+}
+  .logos{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:25px;
+  margin-top:20px;
+}
+
+.logos img{
+  width:95px;
+  height:95px;
+  object-fit:cover;
+  border-radius:50%;        /* يخليهم دائري */
+  background:#0d111f;       /* خلفية غامقة نظيفة */
+  padding:12px;             /* يعطي مسافة داخلية */
+  box-shadow:0 0 18px rgba(255,200,0,0.25);
+  transition:0.3s ease;
+}
+
+.logos img:hover{
+  transform:scale(1.08);
+}
+
+.divider{
+  width:2px;
+  height:60px;
+  background:linear-gradient(to bottom, transparent, #d4af37, transparent);
 }
 </style>
 </head>
